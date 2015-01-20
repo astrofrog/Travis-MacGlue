@@ -2,7 +2,7 @@ language: objective-c
 
 env:
   global:
-  - TRAVIS_BRANCH=reorganize-widgets
+  - TRAVIS_BRANCH=test-app
   - AWS_DEFAULT_REGION=us-standard
   - AWS_ACCESS_KEY_ID=AKIAJ5PSFCJQOVO5QX3Q
   - secure: hIsaYsEzt/POKK8phOgIhQjYqIF+QaIy7uKyyunZGz4yk7evSLAH+43N1ekL0i4juf7/QtIiLi8t6mRArNHHCxvZI3I3FpqE1Q7JQX6ozbZ0z6udSu1YUJezZZgb6lImUotjIfndrmiJkW1Z/1H9raW/d52QaaspBNfUjAfwfg8=
@@ -37,6 +37,7 @@ install:
 - git clone git://github.com/astrofrog/glue.git
 - cd glue
 - git checkout $TRAVIS_BRANCH
+- grep -A 50 load_ui glue/qt/qtutil.py
 - python setup.py install
 - cd ../
 - conda list
