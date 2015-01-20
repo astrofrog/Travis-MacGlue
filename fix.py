@@ -129,7 +129,7 @@ def find_sys(pth):
 
 def find_anaconda(pth):
     """ Search $HOME/anaconda/lib for a file """
-    return _find(pth, os.path.join(os.environ['HOME'], 'anaconda', 'lib'))
+    return _find(pth, os.path.join(os.environ['HOME'], 'miniconda', 'lib'))
 
 
 def find_app(pth, app):
@@ -206,7 +206,7 @@ def copy_nib_file(tld):
     """ Copy the qt nib file into the application bundle"""
     shutil.rmtree(os.path.join(tld, 'Contents', 'Resources', 'qt_menu.nib'),
                   ignore_errors=True)
-    shutil.copytree(os.path.join(os.environ['HOME'], 'anaconda',
+    shutil.copytree(os.path.join(os.environ['HOME'], 'miniconda',
                                  'python.app', 'Contents',
                                  'Resources', 'qt_menu.nib'),
                     os.path.join(tld, 'Contents', 'Resources', 'qt_menu.nib'))
