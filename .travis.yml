@@ -16,6 +16,7 @@ install:
   - conda install --yes pip numpy scipy matplotlib astropy pygments pyzmq ipython scikit-image h5py py requests pytz mock requests pytest pyside
   - pip install macholib==1.5.1 modulegraph==0.11 py2app==0.7
   - pip install pyavm plotly awscli==1.3.16 astrodendro
+  - git clone git://github.com/astrofrog/glue.git
   - cd glue
   - git checkout $TRAVIS_BRANCH
   - python setup.py install
