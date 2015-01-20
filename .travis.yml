@@ -21,8 +21,9 @@ install:
 
 script:
   - mkdir dist
-  - dd if=/dev/zero of=dist/test.dmg count=1024 bs=100000
-  - aws s3 cp dist/*dmg s3://glue-astrofrog/
+  - dd if=/dev/zero of=test.dmg count=1024 bs=100000
+  - du -sh test.dmg
+  - aws s3 cp test.dmg s3://glue-astrofrog/
 
 # script:
 # - python setup.py py2app fix bundle
