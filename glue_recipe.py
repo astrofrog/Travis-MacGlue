@@ -43,10 +43,11 @@ for package in PACKAGES:
                 patch += "    yield EntryPoint('{name}', '{module_name}', attrs={attrs})\n".format(name=name, module_name=entry_point.module_name, attrs=entry_point.attrs)
 
 patch += """
-from glue import main
-main.iter_plugin_entry_points = iter_plugin_entry_points
+from glue import plugin_helpers
+plugin_helpers.iter_plugin_entry_points = iter_plugin_entry_points
 """
 
+print("Patching Glue with:")
 print(patch)
 
 def check(cmd, mg):
